@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.culturetriphometask.R
 import com.example.culturetriphometask.model.Article
-import com.example.culturetriphometask.model.retrofit.mainRepository
+import com.example.culturetriphometask.model.retrofit.MainRepository
 import com.example.culturetriphometask.viewmodel.ArticlesViewModel
 
 class ArticleActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class ArticleActivity : AppCompatActivity() {
         rv.adapter=adapter
         var articlesViewModel = ViewModelProvider(this).get(ArticlesViewModel::class.java)
 
-        var repo = mainRepository()
+        var repo = MainRepository()
         repo.articleListLD.observe(this, Observer { articles ->
 
            var ar =  articles
